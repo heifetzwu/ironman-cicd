@@ -1,0 +1,198 @@
+Name:               gke-mycl-default-pool-b924a125-74h0
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/fluentd-ds-ready=true
+                    beta.kubernetes.io/instance-type=g1-small
+                    beta.kubernetes.io/os=linux
+                    cloud.google.com/gke-nodepool=default-pool
+                    cloud.google.com/gke-os-distribution=cos
+                    failure-domain.beta.kubernetes.io/region=us-central1
+                    failure-domain.beta.kubernetes.io/zone=us-central1-a
+                    kubernetes.io/hostname=gke-mycl-default-pool-b924a125-74h0
+Annotations:        container.googleapis.com/instance_id: 9181614202349432123
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 28 Jun 2019 12:15:32 +0800
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                          ------  -----------------                 ------------------                ------                       -------
+  CorruptDockerOverlay2         False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:18:30 +0800   CorruptDockerOverlay2        docker overlay2 is functioning properly
+  KernelDeadlock                False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:13:29 +0800   KernelHasNoDeadlock          kernel has no deadlock
+  ReadonlyFilesystem            False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:13:29 +0800   FilesystemIsNotReadOnly      Filesystem is not read-only
+  FrequentUnregisterNetDevice   False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:18:31 +0800   UnregisterNetDevice          node is functioning properly
+  FrequentKubeletRestart        False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:18:30 +0800   FrequentKubeletRestart       kubelet is functioning properly
+  FrequentDockerRestart         False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:18:32 +0800   FrequentDockerRestart        docker is functioning properly
+  FrequentContainerdRestart     False   Fri, 28 Jun 2019 12:51:54 +0800   Fri, 28 Jun 2019 12:18:33 +0800   FrequentContainerdRestart    containerd is functioning properly
+  NetworkUnavailable            False   Fri, 28 Jun 2019 12:15:33 +0800   Fri, 28 Jun 2019 12:15:33 +0800   RouteCreated                 NodeController create implicit route
+  OutOfDisk                     False   Fri, 28 Jun 2019 12:52:19 +0800   Fri, 28 Jun 2019 12:15:32 +0800   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure                False   Fri, 28 Jun 2019 12:52:19 +0800   Fri, 28 Jun 2019 12:15:32 +0800   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure                  False   Fri, 28 Jun 2019 12:52:19 +0800   Fri, 28 Jun 2019 12:15:32 +0800   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure                   False   Fri, 28 Jun 2019 12:52:19 +0800   Fri, 28 Jun 2019 12:15:32 +0800   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                         True    Fri, 28 Jun 2019 12:52:19 +0800   Fri, 28 Jun 2019 12:15:33 +0800   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:   10.128.0.14
+  ExternalIP:   35.226.195.223
+  InternalDNS:  gke-mycl-default-pool-b924a125-74h0.us-central1-a.c.plexiform-pilot-137623.internal
+  Hostname:     gke-mycl-default-pool-b924a125-74h0.us-central1-a.c.plexiform-pilot-137623.internal
+Capacity:
+ attachable-volumes-gce-pd:  16
+ cpu:                        1
+ ephemeral-storage:          98868448Ki
+ hugepages-2Mi:              0
+ memory:                     1736052Ki
+ pods:                       110
+Allocatable:
+ attachable-volumes-gce-pd:  16
+ cpu:                        940m
+ ephemeral-storage:          47093746742
+ hugepages-2Mi:              0
+ memory:                     1188212Ki
+ pods:                       110
+System Info:
+ Machine ID:                 3230d5b0867b2961c4ce36588d9f84f0
+ System UUID:                3230D5B0-867B-2961-C4CE-36588D9F84F0
+ Boot ID:                    fbb04f96-d8c1-4d8d-9a5c-f03c583c6192
+ Kernel Version:             4.14.127+
+ OS Image:                   Container-Optimized OS from Google
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://17.3.2
+ Kubelet Version:            v1.12.8-gke.10
+ Kube-Proxy Version:         v1.12.8-gke.10
+PodCIDR:                     10.36.0.0/24
+ProviderID:                  gce://plexiform-pilot-137623/us-central1-a/gke-mycl-default-pool-b924a125-74h0
+Non-terminated Pods:         (7 in total)
+  Namespace                  Name                                              CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                                              ------------  ----------  ---------------  -------------
+  kube-system                event-exporter-v0.2.4-5f7d5d7dd4-s7fct            0 (0%)        0 (0%)      0 (0%)           0 (0%)
+  kube-system                fluentd-gcp-scaler-7b895cbc89-s928g               0 (0%)        0 (0%)      0 (0%)           0 (0%)
+  kube-system                fluentd-gcp-v3.2.0-57s54                          100m (10%)    1 (106%)    200Mi (17%)      500Mi (43%)
+  kube-system                kube-dns-b46cc9485-7bsbd                          260m (27%)    0 (0%)      110Mi (9%)       170Mi (14%)
+  kube-system                kube-proxy-gke-mycl-default-pool-b924a125-74h0    100m (10%)    0 (0%)      0 (0%)           0 (0%)
+  kube-system                l7-default-backend-6f8697844f-2c2qf               10m (1%)      10m (1%)    20Mi (1%)        20Mi (1%)
+  kube-system                prometheus-to-sd-fdgxx                            1m (0%)       3m (0%)     20Mi (1%)        20Mi (1%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests     Limits
+  --------                   --------     ------
+  cpu                        471m (50%)   1013m (107%)
+  memory                     350Mi (30%)  710Mi (61%)
+  attachable-volumes-gce-pd  0            0
+Events:
+  Type    Reason                     Age                From                                                  Message
+  ----    ------                     ----               ----                                                  -------
+  Normal  Starting                   36m                kubelet, gke-mycl-default-pool-b924a125-74h0          Starting kubelet.
+  Normal  NodeHasSufficientDisk      36m (x4 over 36m)  kubelet, gke-mycl-default-pool-b924a125-74h0          Node gke-mycl-default-pool-b924a125-74h0 status is now: NodeHasSufficientDisk
+  Normal  NodeHasSufficientMemory    36m (x4 over 36m)  kubelet, gke-mycl-default-pool-b924a125-74h0          Node gke-mycl-default-pool-b924a125-74h0 status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure      36m (x4 over 36m)  kubelet, gke-mycl-default-pool-b924a125-74h0          Node gke-mycl-default-pool-b924a125-74h0 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID       36m (x4 over 36m)  kubelet, gke-mycl-default-pool-b924a125-74h0          Node gke-mycl-default-pool-b924a125-74h0 status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced    36m                kubelet, gke-mycl-default-pool-b924a125-74h0          Updated Node Allocatable limit across pods
+  Normal  NodeReady                  36m                kubelet, gke-mycl-default-pool-b924a125-74h0          Node gke-mycl-default-pool-b924a125-74h0 status is now: NodeReady
+  Normal  Starting                   36m                kube-proxy, gke-mycl-default-pool-b924a125-74h0       Starting kube-proxy.
+  Normal  FrequentKubeletRestart     33m                systemd-monitor, gke-mycl-default-pool-b924a125-74h0  Node condition FrequentKubeletRestart is now: False, reason: FrequentKubeletRestart
+  Normal  CorruptDockerOverlay2      33m                docker-monitor, gke-mycl-default-pool-b924a125-74h0   Node condition CorruptDockerOverlay2 is now: False, reason: CorruptDockerOverlay2
+  Normal  UnregisterNetDevice        33m                kernel-monitor, gke-mycl-default-pool-b924a125-74h0   Node condition FrequentUnregisterNetDevice is now: False, reason: UnregisterNetDevice
+  Normal  FrequentDockerRestart      33m                systemd-monitor, gke-mycl-default-pool-b924a125-74h0  Node condition FrequentDockerRestart is now: False, reason: FrequentDockerRestart
+  Normal  FrequentContainerdRestart  33m                systemd-monitor, gke-mycl-default-pool-b924a125-74h0  Node condition FrequentContainerdRestart is now: False, reason: FrequentContainerdRestart
+
+
+Name:               gke-mycl-default-pool-b924a125-d3w2
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/fluentd-ds-ready=true
+                    beta.kubernetes.io/instance-type=g1-small
+                    beta.kubernetes.io/os=linux
+                    cloud.google.com/gke-nodepool=default-pool
+                    cloud.google.com/gke-os-distribution=cos
+                    failure-domain.beta.kubernetes.io/region=us-central1
+                    failure-domain.beta.kubernetes.io/zone=us-central1-a
+                    kubernetes.io/hostname=gke-mycl-default-pool-b924a125-d3w2
+Annotations:        container.googleapis.com/instance_id: 3767366304319155515
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 28 Jun 2019 12:15:40 +0800
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                          ------  -----------------                 ------------------                ------                       -------
+  FrequentContainerdRestart     False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:18:33 +0800   FrequentContainerdRestart    containerd is functioning properly
+  CorruptDockerOverlay2         False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:18:31 +0800   CorruptDockerOverlay2        docker overlay2 is functioning properly
+  KernelDeadlock                False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:13:30 +0800   KernelHasNoDeadlock          kernel has no deadlock
+  ReadonlyFilesystem            False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:13:30 +0800   FilesystemIsNotReadOnly      Filesystem is not read-only
+  FrequentUnregisterNetDevice   False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:18:31 +0800   UnregisterNetDevice          node is functioning properly
+  FrequentKubeletRestart        False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:18:31 +0800   FrequentKubeletRestart       kubelet is functioning properly
+  FrequentDockerRestart         False   Fri, 28 Jun 2019 12:51:55 +0800   Fri, 28 Jun 2019 12:18:32 +0800   FrequentDockerRestart        docker is functioning properly
+  NetworkUnavailable            False   Fri, 28 Jun 2019 12:15:41 +0800   Fri, 28 Jun 2019 12:15:41 +0800   RouteCreated                 NodeController create implicit route
+  OutOfDisk                     False   Fri, 28 Jun 2019 12:52:17 +0800   Fri, 28 Jun 2019 12:15:40 +0800   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure                False   Fri, 28 Jun 2019 12:52:17 +0800   Fri, 28 Jun 2019 12:15:40 +0800   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure                  False   Fri, 28 Jun 2019 12:52:17 +0800   Fri, 28 Jun 2019 12:15:40 +0800   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure                   False   Fri, 28 Jun 2019 12:52:17 +0800   Fri, 28 Jun 2019 12:15:40 +0800   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                         True    Fri, 28 Jun 2019 12:52:17 +0800   Fri, 28 Jun 2019 12:15:41 +0800   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:   10.128.0.15
+  ExternalIP:   104.154.72.18
+  InternalDNS:  gke-mycl-default-pool-b924a125-d3w2.us-central1-a.c.plexiform-pilot-137623.internal
+  Hostname:     gke-mycl-default-pool-b924a125-d3w2.us-central1-a.c.plexiform-pilot-137623.internal
+Capacity:
+ attachable-volumes-gce-pd:  16
+ cpu:                        1
+ ephemeral-storage:          98868448Ki
+ hugepages-2Mi:              0
+ memory:                     1736052Ki
+ pods:                       110
+Allocatable:
+ attachable-volumes-gce-pd:  16
+ cpu:                        940m
+ ephemeral-storage:          47093746742
+ hugepages-2Mi:              0
+ memory:                     1188212Ki
+ pods:                       110
+System Info:
+ Machine ID:                 366437db11457f3ec8c4080da4273bfc
+ System UUID:                366437DB-1145-7F3E-C8C4-080DA4273BFC
+ Boot ID:                    195a5c54-b147-4ba3-a29b-ea87fa97ebf8
+ Kernel Version:             4.14.127+
+ OS Image:                   Container-Optimized OS from Google
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://17.3.2
+ Kubelet Version:            v1.12.8-gke.10
+ Kube-Proxy Version:         v1.12.8-gke.10
+PodCIDR:                     10.36.1.0/24
+ProviderID:                  gce://plexiform-pilot-137623/us-central1-a/gke-mycl-default-pool-b924a125-d3w2
+Non-terminated Pods:         (7 in total)
+  Namespace                  Name                                              CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                                              ------------  ----------  ---------------  -------------
+  kube-system                fluentd-gcp-v3.2.0-hlhd6                          100m (10%)    1 (106%)    200Mi (17%)      500Mi (43%)
+  kube-system                heapster-v1.6.0-beta.1-869547f846-b76kw           63m (6%)      63m (6%)    215640Ki (18%)   215640Ki (18%)
+  kube-system                kube-dns-autoscaler-76fcd5f658-fmsgk              20m (2%)      0 (0%)      10Mi (0%)        0 (0%)
+  kube-system                kube-dns-b46cc9485-ztw2w                          260m (27%)    0 (0%)      110Mi (9%)       170Mi (14%)
+  kube-system                kube-proxy-gke-mycl-default-pool-b924a125-d3w2    100m (10%)    0 (0%)      0 (0%)           0 (0%)
+  kube-system                metrics-server-v0.3.1-5b4d6d8d98-vr48g            48m (5%)      143m (15%)  105Mi (9%)       355Mi (30%)
+  kube-system                prometheus-to-sd-v8ttc                            1m (0%)       3m (0%)     20Mi (1%)        20Mi (1%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests        Limits
+  --------                   --------        ------
+  cpu                        592m (62%)      1209m (128%)
+  memory                     671320Ki (56%)  1285720Ki (108%)
+  attachable-volumes-gce-pd  0               0
+Events:
+  Type    Reason                     Age                From                                                  Message
+  ----    ------                     ----               ----                                                  -------
+  Normal  Starting                   36m                kubelet, gke-mycl-default-pool-b924a125-d3w2          Starting kubelet.
+  Normal  NodeHasSufficientDisk      36m (x2 over 36m)  kubelet, gke-mycl-default-pool-b924a125-d3w2          Node gke-mycl-default-pool-b924a125-d3w2 status is now: NodeHasSufficientDisk
+  Normal  NodeHasSufficientMemory    36m (x2 over 36m)  kubelet, gke-mycl-default-pool-b924a125-d3w2          Node gke-mycl-default-pool-b924a125-d3w2 status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure      36m (x2 over 36m)  kubelet, gke-mycl-default-pool-b924a125-d3w2          Node gke-mycl-default-pool-b924a125-d3w2 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID       36m (x2 over 36m)  kubelet, gke-mycl-default-pool-b924a125-d3w2          Node gke-mycl-default-pool-b924a125-d3w2 status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced    36m                kubelet, gke-mycl-default-pool-b924a125-d3w2          Updated Node Allocatable limit across pods
+  Normal  NodeReady                  36m                kubelet, gke-mycl-default-pool-b924a125-d3w2          Node gke-mycl-default-pool-b924a125-d3w2 status is now: NodeReady
+  Normal  Starting                   36m                kube-proxy, gke-mycl-default-pool-b924a125-d3w2       Starting kube-proxy.
+  Normal  FrequentKubeletRestart     33m                systemd-monitor, gke-mycl-default-pool-b924a125-d3w2  Node condition FrequentKubeletRestart is now: False, reason: FrequentKubeletRestart
+  Normal  CorruptDockerOverlay2      33m                docker-monitor, gke-mycl-default-pool-b924a125-d3w2   Node condition CorruptDockerOverlay2 is now: False, reason: CorruptDockerOverlay2
+  Normal  UnregisterNetDevice        33m                kernel-monitor, gke-mycl-default-pool-b924a125-d3w2   Node condition FrequentUnregisterNetDevice is now: False, reason: UnregisterNetDevice
+  Normal  FrequentDockerRestart      33m                systemd-monitor, gke-mycl-default-pool-b924a125-d3w2  Node condition FrequentDockerRestart is now: False, reason: FrequentDockerRestart
+  Normal  FrequentContainerdRestart  33m                systemd-monitor, gke-mycl-default-pool-b924a125-d3w2  Node condition FrequentContainerdRestart is now: False, reason: FrequentContainerdRestart
