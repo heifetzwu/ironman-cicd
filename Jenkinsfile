@@ -17,7 +17,7 @@ node{
 
     checkout scm
 
-    stage '建立映像檔'
+    stage '建立映像檔 ----'
     sh("echo +++++ new test ++++++")
     sh("env")
     sh("uname -a")
@@ -25,7 +25,7 @@ node{
     sh("cat /etc/issue")
     def customImage = docker.build(${imgWithTag})
 
-    stage '放置映像檔'
+    stage '放置映像檔 ----'
     sh("gcloud docker -- push ${imgWithTag} ")
 
     stage '部署'
