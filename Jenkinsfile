@@ -18,6 +18,10 @@ node{
     checkout scm
 
     stage '建立映像檔'
+    sh("env")
+    sh("uname -a")
+    sh("cat /proc/version")
+    sh("cat /etc/issue")
     sh("docker build -t ${imgWithTag} .")
 
     stage '放置映像檔'
