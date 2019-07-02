@@ -23,6 +23,8 @@ node{
     sh("uname -a")
     sh("cat /proc/version")
     sh("cat /etc/issue")
+    sh("sudo apt-get -y update")
+    sh("sudo apt-get -y install docker")
     sh("docker build -t ${imgWithTag} .")
 
     stage '放置映像檔'
