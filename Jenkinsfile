@@ -18,6 +18,7 @@ node{
     checkout scm
 
     stage '建立映像檔'
+    sh("echo +++++ new test ++++++")
     sh("env")
     sh("uname -a")
     sh("cat /proc/version")
