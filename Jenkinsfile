@@ -23,7 +23,6 @@ node{
     sh("uname -a")
     sh("cat /proc/version")
     sh("cat /etc/issue")
-    // sh("docker build -t ${imgWithTag} .")
     def customImage = docker.build(${imgWithTag})
 
     stage '放置映像檔'
