@@ -23,8 +23,8 @@ node{
     sh("uname -a")
     sh("cat /proc/version")
     sh("cat /etc/issue")
-    def customImage = docker.build(${imgWithTag})
-
+    // def customImage = docker.build(${imgWithTag})
+    sh("docker build -t ${imgWithTag} .")
     stage '放置映像檔 ----'
     sh("gcloud docker -- push ${imgWithTag} ")
 
