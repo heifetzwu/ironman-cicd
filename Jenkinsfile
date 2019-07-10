@@ -25,7 +25,7 @@ volumes: [
           sh """
             docker build -t ${imgWithTag} .
             """
-        }
+        
       }
     }
     
