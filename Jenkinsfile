@@ -4,7 +4,7 @@ def appName = 'ironmanapp'
 def tag = "v_${env.BUILD_NUMBER}"
 // def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
 def img = "${project}/${appName}-${env.BRANCH_NAME}"
-def imgWithTag = "${img}:${tag}"
+def imgWithTag = "heifetzwu/${img}:${tag}"
 
 def devNamespace = 'develop'
 def proNamespace = 'production'
