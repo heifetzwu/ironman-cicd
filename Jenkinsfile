@@ -43,7 +43,7 @@ volumes: [
       }
     }
     stage('deploy') {
-        sh("sed -i.bak s#gcr.io/ithome-image#${imgWithTag}#")
+        sh("sed -i.bak s#gcr.io/ithome-image#${imgWithTag}# ./k8s/deploy.yaml")
         switch (env.BRANCH_NAME) {
             case "master":
             // replace namespace settings
