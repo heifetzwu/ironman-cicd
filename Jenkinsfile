@@ -2,8 +2,8 @@ def label = "worker-${UUID.randomUUID().toString()}"
 def project = 'plexiform-pilot-137623'
 def appName = 'ironmanapp'
 def tag = "v_${env.BUILD_NUMBER}"
-def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
-// def img = "${project}/${appName}-${env.BRANCH_NAME}"
+// def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
+def img = "${project}/${appName}-${env.BRANCH_NAME}"
 def imgWithTag = "${img}:${tag}"
 
 def devNamespace = 'develop'
@@ -35,6 +35,7 @@ volumes: [
               echo "gitCommit="${gitCommit}
               docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
               // docker push namespace/my-image:${gitCommit}
+              echo "### docker push ${imgWithTag}"
               docker push ${imgWithTag}
               """
           }
