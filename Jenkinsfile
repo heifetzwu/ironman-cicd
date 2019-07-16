@@ -1,10 +1,10 @@
 def label = "worker-${UUID.randomUUID().toString()}"
-def project = 'plexiform'
+def project = 'heifetzwu'
 def appName = 'ironman'
 def tag = "v_${env.BUILD_NUMBER}"
 // def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
 def img = "${project}/${appName}-${env.BRANCH_NAME}"
-def imgWithTag = "heifetzwu/${img}:${tag}"
+def imgWithTag = "${img}:${tag}"
 
 def devNamespace = 'develop'
 def proNamespace = 'production'
