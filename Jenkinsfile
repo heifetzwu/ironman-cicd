@@ -17,7 +17,7 @@ volumes: [
 ]) {
   node(label) {
     def myRepo = checkout scm
-    
+    def gitCommit = myRepo.GIT_COMMIT
  
     
     stage('Create Docker images') {
