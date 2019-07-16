@@ -1,6 +1,6 @@
 def label = "worker-${UUID.randomUUID().toString()}"
-def project = 'plexiform-pilot-137623'
-def appName = 'ironmanapp'
+def project = 'plexiform'
+def appName = 'ironman'
 def tag = "v_${env.BUILD_NUMBER}"
 // def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
 def img = "${project}/${appName}-${env.BRANCH_NAME}"
