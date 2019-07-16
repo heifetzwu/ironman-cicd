@@ -34,7 +34,7 @@ volumes: [
             sh """
               echo "gitCommit="${gitCommit}
               docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
-              // docker push namespace/my-image:${gitCommit}
+              # docker push namespace/my-image:${gitCommit}
               echo "### docker push ${imgWithTag}"
               docker push ${imgWithTag}
               """
