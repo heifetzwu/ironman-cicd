@@ -56,6 +56,7 @@ volumes: [
               sh("kubectl version")
               sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
               // sh("gcloud init")
+              sh("gcloud auth list")
               sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
               sh("kubectl get pods")
 
