@@ -10,7 +10,8 @@ def devNamespace = 'develop'
 def proNamespace = 'production'
 podTemplate(label: label, containers: [
   
-  containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true)
+  containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
+  containerTemplate(name: 'kubectl', image: 'gcr.io/cloud-builders/kubectl', command: 'cat', ttyEnabled: true)
   
 ],
 volumes: [
@@ -43,6 +44,7 @@ volumes: [
       }
     }
     stage('deploy') {
+      container('docker') {  
         sh("sed -i.bak s#gcr.io/ithome-image#${imgWithTag}# ./k8s/deploy.yaml")
         switch (env.BRANCH_NAME) {
             case "master":
@@ -53,6 +55,7 @@ volumes: [
             sh("kubectl --namespace=${devNamespace} apply -f ./k8s/deploy.yaml")
             break
         }
+      }
     }
   }
 }
