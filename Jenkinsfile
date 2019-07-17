@@ -44,15 +44,19 @@ volumes: [
       }
     }
     stage('deploy') {
-      container('docker') {  
+      container('kubectl') {  
         sh("sed -i.bak s#gcr.io/ithome-image#${imgWithTag}# ./k8s/deploy.yaml")
         switch (env.BRANCH_NAME) {
             case "master":
+              sh("### echo test kubectl")
+              sh("kubectl version")
+              sh("kubectl get pods")
+
             // replace namespace settings
-            sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/service.yaml")
-            sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/deploy.yaml")
-            sh("kubectl --namespace=${devNamespace} apply -f ./k8s/service.yaml")
-            sh("kubectl --namespace=${devNamespace} apply -f ./k8s/deploy.yaml")
+            //sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/service.yaml")
+            //sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/deploy.yaml")
+            //sh("kubectl --namespace=${devNamespace} apply -f ./k8s/service.yaml")
+            //sh("kubectl --namespace=${devNamespace} apply -f ./k8s/deploy.yaml")
             break
         }
       }
