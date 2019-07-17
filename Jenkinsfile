@@ -8,6 +8,9 @@ def imgWithTag = "${img}:${tag}"
 
 def devNamespace = 'develop'
 def proNamespace = 'production'
+
+def GOOGLE_APPLICATION_CREDENTIALS    = '/home/jenkins/dev/secret'
+
 podTemplate(label: label, containers: [
   
   containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
@@ -15,12 +18,13 @@ podTemplate(label: label, containers: [
   
 ],
 volumes: [
-    hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
+    hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
+    secretVolume(secretName: 'jenkinsgcp', mountPath: '/home/jenkins/dev')
 ]) {
   node(label) {
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
- 
+    env.GOOGLE_APPLICATION_CREDENTIALS=GOOGLE_APPLICATION_CREDENTIALS
     
     stage('Create Docker images') {
       container('docker') {
@@ -50,7 +54,8 @@ volumes: [
             case "master":
               sh("### echo test kubectl")
               sh("kubectl version")
-              sh("gcloud init")
+              sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
+              // sh("gcloud init")
               sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
               sh("kubectl get pods")
 
