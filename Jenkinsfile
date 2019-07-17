@@ -50,6 +50,7 @@ volumes: [
             case "master":
               sh("### echo test kubectl")
               sh("kubectl version")
+              sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
               sh("kubectl get pods")
 
             // replace namespace settings
