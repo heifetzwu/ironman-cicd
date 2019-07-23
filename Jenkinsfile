@@ -51,7 +51,7 @@ volumes: [
       container('kubectl') {  
         sh("sed -i.bak s#gcr.io/ithome-image#${imgWithTag}# ./k8s/deploy.yaml")
         switch (env.BRANCH_NAME) {
-            case "master":
+          case "master":
               sh("### echo test kubectl")
               sh("kubectl version")
               sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
@@ -60,12 +60,22 @@ volumes: [
               sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
               sh("kubectl get pods")
 
-            // replace namespace settings
-            sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/service.yaml")
-            sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/deploy.yaml")
-            sh("kubectl --namespace=${devNamespace} apply -f ./k8s/service.yaml")
-            sh("kubectl --namespace=${devNamespace} apply -f ./k8s/deploy.yaml")
-            break
+              // replace namespace settings
+              sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/service.yaml")
+              sh("sed -i.bak 's#env: current#env: ${devNamespace}#' ./k8s/deploy.yaml")
+              sh("kubectl --namespace=${devNamespace} apply -f ./k8s/service.yaml")
+              sh("kubectl --namespace=${devNamespace} apply -f ./k8s/deploy.yaml")
+              break
+          case "production":
+              sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
+              sh("gcloud auth list")
+              sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
+              // replace namespace settings
+              sh("sed -i.bak 's#env: current#env: ${proNamespace}#' ./k8s/service.yaml")
+              sh("sed -i.bak 's#env: current#env: ${proNamespace}#' ./k8s/deploy.yaml")
+              sh("kubectl --namespace=${proNamespace} apply -f ./k8s/service.yaml")
+              sh("kubectl --namespace=${proNamespace} apply -f ./k8s/deploy.yaml")
+              break
         }
       }
     }
