@@ -57,7 +57,7 @@ volumes: [
               sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
               // sh("gcloud init")
               sh("gcloud auth list")
-              sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
+              sh("gcloud container clusters get-credentials myck --zone us-central1-a --project plexiform-pilot-137623")
               sh("kubectl get pods")
 
               // replace namespace settings
@@ -69,7 +69,7 @@ volumes: [
           case "production":
               sh("gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}")
               sh("gcloud auth list")
-              sh("gcloud container clusters get-credentials mycl --zone us-central1-a --project plexiform-pilot-137623")
+              sh("gcloud container clusters get-credentials myck --zone us-central1-a --project plexiform-pilot-137623")
               // replace namespace settings
               sh("sed -i.bak 's#env: current#env: ${proNamespace}#' ./k8s/service.yaml")
               sh("sed -i.bak 's#env: current#env: ${proNamespace}#' ./k8s/deploy.yaml")
