@@ -12,7 +12,7 @@ def proNamespace = 'production'
 def GOOGLE_APPLICATION_CREDENTIALS    = '/home/jenkins/dev/secret'
 
 
-node(label) {
+node {
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
 
