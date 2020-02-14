@@ -12,13 +12,13 @@ def proNamespace = 'production'
 def GOOGLE_APPLICATION_CREDENTIALS    = '/home/jenkins/dev/secret'
 
 
-//node {
+node {
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
 
     
     stage('Create Docker images') {
-      container('docker') {
+      
           sh """
             docker build -t ${imgWithTag} .
             """
@@ -36,6 +36,6 @@ def GOOGLE_APPLICATION_CREDENTIALS    = '/home/jenkins/dev/secret'
               docker push ${imgWithTag}
               """
           }
-      }
+      
     }
-//}
+}
