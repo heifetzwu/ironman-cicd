@@ -13,7 +13,7 @@ def GOOGLE_APPLICATION_CREDENTIALS    = '/home/jenkins/dev/secret'
 
 
 node {
-    echo "webhook test 4"
+    echo "webhook test 5"
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
 
